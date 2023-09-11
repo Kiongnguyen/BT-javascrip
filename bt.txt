@@ -1,0 +1,12 @@
+1. Tính giai thừa của một số tự nhiên n!. Ví dụ: 5! = 5 * 4 * 3 * 2 * 1.
+2. Tìm độ dài của từ dài nhất trong câu.
+3. Trả về string với các từ có chữ cái đầu tiên viết hoa. Ví dụ: I'm a little tea pot => I'm A Little Tea Pot.
+4. Trả về một mảng gồm các số lớn nhất của mỗi sub-array
+vd: [4, 5, 1, 3],
+[13, 27, 18, 26],
+5. Lặp lại string với số lần cho trước.
+6. Kiểm tra xem trong 1 string có chứa tất cả các kí tự của string thứ 2 hay không.
+7. Bỏ đi tất cả các giá trị falsy khỏi một mảng (giá trị falsy là false, null, 0, "", undefined và NaN).
+8. tìm số nhỏ nhất / lớn nhất trong mảng
+9. Tính tổng các số trong một khoảng cho trước.
+10. Cho một string, nhiệm vụ của bạn là phải đảo ngược lại string đó. Ví dụ: Hello => olleH.

@@ -1,3 +1,4 @@
+//2. Tìm độ dài của từ dài nhất trong câu.
 const text = "Nguyen Van Cuong";
 
 function findLongestWord(text) {

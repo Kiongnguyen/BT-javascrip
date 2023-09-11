@@ -1,0 +1,548 @@
+1/JavaScript Where To
+
+The <script> Tag
+In HTML, JavaScript code is inserted between <script> and </script> tags.
+
+2/JavaScript Output
+
+JavaScript Display Possibilities
+JavaScript can "display" data in different ways:
+
+Writing into an HTML element, using innerHTML.
+Writing into the HTML output using document.write().
+Writing into an alert box, using window.alert().
+Writing into the browser console, using console.log().
+
+3/JavaScript Statements
+
+
+4/JavaScript Variables
+
+1. Luôn khai báo biến
+
+2. Luôn sử dụng const nếu giá trị không được thay đổi
+
+3. Luôn sử dụng const nếu không nên thay đổi loại (Mảng và Đối tượng)
+
+4. Chỉ sử dụng let nếu không thể sử dụngconst
+
+5. Chỉ sử dụng varnếu bạn PHẢI hỗ trợ các trình duyệt cũ.
+
+5/JavaScript Let
+	*/Các biến được xác định bằng let không thể được khai báo lại--> var có thể 
+
+	*/Các biến được xác định bằng let phải được khai báo trước khi sử dụng--> với var mỗi lần khai báo sẽ đẩy lên trên cùng
+
+	*/Các biến được xác định bằng let có Phạm vi khối-->var có thể dung ở khắp mọi nơi với một lần khai báo
+6/JavaScript Const--> gần tương tự như let
+	*/Các biến được xác định bằng constkhông thể được khai báo lại
+
+	*/Các biến được xác định bằng constkhông thể được gán lại
+
+	*/Các biến được xác định bằng constcó Phạm vi khối
+	
+	*/đối với mảng và đối tượng không thể gán lại được nhưng có thể thay đổi thuộc tính của mảng và đối tượng
+
+7/JavaScript Operators
+
+	*/một số chú ý đặc biệt gồm có phép toán ** là mũ, +=,*=,/=,**=,%= theo dạng tự nhân tự chia ...
+	*/phép so sánh trong JS == - bằng
+				=== - bằng về giá trị cho dù là string hay number
+			khác --> != và !==
+				? chưa hiểu cho lắm nhưng đc dùng khá nhiều 
+	*/toán tử logic    && - and
+			   || - or
+			   ! - not
+
+	*/ typeof - xuất ra loại dữ liệu 
+	*/ instanceof -Trả về true nếu một đối tượng là một thể hiện của một loại đối tượng (!= rỗng)
+	*/thêm cú pháp x++ hoặc là ++x cái này xem lại trên F8
+8/JavaScript Data Types
+
+JavaScript has 8 Datatypes
+1. String
+2. Number
+3. Bigint
+4. Boolean
+5. Undefined
+6. Null
+7. Symbol
+8. Object
+
+The Object Datatype
+The object data type can contain:
+
+1. An object
+2. An array
+3. A date
+
+	
+9/JavaScript Functions
+
+	*/cach khai báo cổ điển của functions
+
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+
+var myFunction = function(p1, p2) {
+	return p1 * p2;
+}
+
+	*/Function Hoisting - có thể gọi hàm trước khi được khai báo 
+	*/Các biểu thức hàm sẽ tự động thực thi nếu biểu thức được theo sau bởi ()
+	*/Arrow Functions - CS6 - 
+		const x = (x, y) => x * y; //nếu cần thể hiện nhiều chức năng thì thêm dấu {};
+
+10/JavaScript Function Constructor
+
+// This is a function constructor:
+function myFunction(arg1, arg2) {
+  this.firstName = arg1;
+  this.lastName  = arg2;
+}
+
+// This creates a new object
+const myObj = new myFunction("John", "Doe");
+
+// This will return "John"
+myObj.firstName;
+11/JavaScript Function call, apply, bind, clousures
+
+12/JavaScript Objects
+
+const car = {type:"Fiat", model:"500", color:"white"};
+
+	*/Displaying the Object in a Loop - cai nay F8 noi kha chi tiet 
+	*/Object.values() va Object.keys()   - dau ra la mot array
+	*/JSON.stringify() - liệt kê dưới dang một string theo cú pháp code --> xem them cách đảo ngược mã Json trong F8
+	*/JavaScript Object Constructors - giống với funstions cóntuctors--> tao một mẫu rồi dùng dần 
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+  this.name = function() {
+    return this.firstName + " " + this.lastName;
+  };
+}
+
+
+	*/prototype
+
+Kế thừa nguyên mẫu
+Tất cả các đối tượng JavaScript đều kế thừa các thuộc tính và phương thức từ một nguyên mẫu:
+
+Date đối tượng kế thừa từ Date.prototype
+Array đối tượng kế thừa từ Array.prototype
+Person đối tượng kế thừa từ Person.prototype
+Cái này Object.prototype nằm ở đầu chuỗi kế thừa nguyên mẫu:
+
+Dateđối tượng, Arrayđối tượng và Personđối tượng kế thừa từ Object.prototype.
+	*/Iterating Over a String,Aray
+
+for (const x of "W3Schools") {
+  // code block to be executed
+}
+
+for (const x of [1,2,3,4,5]) {
+  // code block to be executed
+}
+
+
+-method object xem trong F8
+
+13/JS Event 
+onclick		-The user clicks an HTML element
+onmouseover	-The user moves the mouse over an HTML element
+onmouseout	-The user moves the mouse away from an HTML element
+onkeydown	-The user pushes a keyboard key
+
+14/JS String and number
+
+String length - đo chiều dai của string text.length
+
+String slice(a,b) - newString = myString.slice(7,13); --> lấy ra String mới cắt từ vị trí 7--> 13 của string cũ
+String substring() - tương tự slice nhưng nếu chỉ số là số âm coi như số không 
+String substr() - tương tự nhưng chỉ số thứ 2 là độ dài string mới
+
+String replace() - newText = text.replace("Microsoft", "W3Schools") --> thay thế giá trị này bằng 1 giá trị khác chỉ cho trường hợp đầu tiên, muốn tất cả dùng /   /g, muốn không phân biệt in hoa và thường /   /i
+String replaceAll() - tương tự nhưng cho tất cả không dùng g và i
+
+String toUpperCase()- in hoa
+String toLowerCase()-in thường
+
+String concat() -  let text1 = "Hello";let text2 = "World";let text3 = text1.concat(" ", text2); --> nối 2 chuỗi với nhau 
+
+String trim() - text2 = text1.trim(); --> loại bỏ khoảng trắng
+String trimStart() - loại ở đầu 
+String trimEnd() - loại ơ cuối
+
+String padStart() - text = text.padStart(4,"0"); --> thêm số 0 vào text đến khi đạt 4 dãy
+String padEnd() - tương tự nhưng vào cuối
+
+String charAt() -char = text.charAt(0);--> trả về kí tự ở vị trí 0
+String charCodeAt() - tương tự nhưng đổi ra mã UTF-16
+
+String split() - text.split(",") --> chuyển một chuỗi thành một mảng với các kí tự cách nhau dấu ,
+
+String indexOf() - index = text.indexOf("locate"); --> tìm vị trí kí tự
+String lastIndexOf() - vị trí cuối còn kia là vị trí đầu
+
+String search()- text.search("locate");--> trả về vị trí của chuỗi
+
+String match()
+String matchAll()
+
+String includes()-text.includes("world");--> trả về true nếu có gốc ấy
+
+String startsWith()- tương tự nhưng chỉ đúng nếu chuỗi bắt đầu ở đấy
+String endsWith()- kết thúc và tương tự
+
+	*/ Template literals: ${...}
+toString()-x.toString();-->chuyển số thành string
+x.toExponential(2); --> lấy bao nhiêu số e
+x.toFixed(2); --> làm tròng bao nhiêu số thập phân
+
+  Number(true) --> 1  --> chuyển dữ liệu thành số 
+  Number(false) --> 0
+  Number("10") --> 10 
+  Number("  10") --> 10
+  Number("10  ") --> 10
+  Number(" 10  ") --> 10
+  Number("10.33") --> 10.33
+  Number("10,33") -->NaN
+  Number("10 33") -->NaN
+  Number("John"); -->NaN
+
+
+15/JavaScript Arrays
+
+
+const array_name = [item1, item2, ...];     
+
+
+Array length - size = fruits.length; --> số phần tử của mảng
+Array toString() - fruits.toString(,); --> đổi thành string
+Array pop() - fruits.pop() --> loại bỏ phần tử cuối
+Array push() - fruits.push("Kiwi");--> thêm một phần tử mới vào mảng 
+Array shift() -fruits.shift(); --> loại bỏ phần tử đầu tiên
+Array unshift() - fruits.unshift("Lemon"); --> thêm phần tử đầu vào
+Array join() -tương tự toString
+Array delete() - delete fruits[0]; xóa phần tử
+Array concat() - 
+const myGirls = ["Cecilie", "Lone"];
+const myBoys = ["Emil", "Tobias", "Linus"];
+
+const myChildren = myGirls.concat(myBoys);--> nối 2 mảng 
+const myChildren = arr1.concat(arr2, arr3); --> nối 3 mảng
+Array flat()
+const myArr = [[1,2],[3,4],[5,6]];
+const newArr = myArr.flat(); --> nối các phần tử với nhau
+Array splice()
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");--> thêm phần tử vào mảng cũ
+Array slice() 
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(0, 1);--> loại bỏ các phần tử 
+
+fruits.sort(); --> sắp xếp thứ tự theo bản chữ cái
+points.sort(function(a, b){return b - a});
+
+
+16/JavaScript Array 
+
+	*/forEach() - array.forEach(function(currentValue, index, arr), thisValue) - chạy qua một vòng trong array
+		- currentValue-->lướt qua tất cả các phần tử để thực hiện lệnh trong ấy
+		- index --> giá trị index các phần tử trong mảng 
+		- arr --> mảng array
+		- thisValue -->một value của hàm 
+		--> return = undefined
+	*/find() - array.find(function(currentValue, index, arr),thisValue) {
+			return currentValue so sánh với điều kiện }
+		 -nếu đk đúng thì in ra currentValue //array.find()-là một value đầu tiên
+	*/filter() - array.filter(function(currentValue, index, arr),thisValue) {
+			return currentValue so sánh với điều kiện }
+		 -nếu đk đúng thì in ra currentValue //array.find()-là một value mảng gồm tất cả giá trị thỏa mãn
+	*/entries() - array.entries() --> trả ra một mảng có các phần tử là mảng con [[index,array[index]],[...],[...]]
+	*/map() - array.map(function(currentValue, index, arr), thisValue) 
+		--> return ra một mảng mới 
+	*/reduce() - array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+			-total-->biến để cộng dồn 
+17/JS Dates - cnst date= new Date(); --> không nhập sẽ tự cập nhập ngày giờ theo trình duyệt, viết vào () sẽ có giờ cố định
+18/Math JS
+
+
+	*/Constants
+Math.E        // returns Euler's number
+Math.PI       // returns PI
+Math.SQRT2    // returns the square root of 2
+Math.SQRT1_2  // returns the square root of 1/2
+Math.LN2      // returns the natural logarithm of 2
+Math.LN10     // returns the natural logarithm of 10
+Math.LOG2E    // returns base 2 logarithm of E
+Math.LOG10E   // returns base 10 logarithm of E
+	*/Number to Integer
+Math.round(x)	Returns x rounded to its nearest integer
+Math.ceil(x)	Returns x rounded up to its nearest integer
+Math.floor(x)	Returns x rounded down to its nearest integer
+Math.trunc(x)	Returns the integer part of x (new in ES6)
+
+19/Conditional (Ternary) Operator
+variablename = (condition) ? value1:value2 
+
+let voteable = (age < 18) ? "Too young":"Old enough";
+
+The ?? operator returns the first argument if it is not nullish (null or undefined).
+Otherwise it returns the second argument.
+let name = null;
+let text = "missing";
+let result = name ?? text;
+
+The ?. operator returns undefined if an object is undefined or null (instead of throwing an error).
+/ Create an object:
+const car = {type:"Fiat", model:"500", color:"white"};
+// Ask for car name:
+document.getElementById("demo").innerHTML = car?.name;
+
+20/JavaScript Switch Statement
+
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+21/JavaScript For In
+
+for (key in object) {
+  // code block to be executed}
+
+22/The For Of Loop
+
+The JavaScript for of statement loops through the values of an iterable object.
+It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:
+
+for (variable of iterable) {
+  // code block to be executed
+}
+
+--> cơ bản tương tự như những gì ở trên nhưng dung đc nhiều loại dữ liệu hơn
+
+23/The While Loop
+while (condition) {
+  // code block to be executed
+}
+
+do {
+  // code block to be executed
+}
+while (condition);
+24/ break và continue
+
+break --> khi điều kiện đúng thì vong lặp dừng lại 
+continue --> khi điều kiện đúng thì vòng lặp bỏ qua phần tử điều kiện và tiếp tục 
+
+25/JavaScript typeof
+
+*/In JavaScript there are 5 different data types that can contain values:
+
+string
+number
+boolean
+object
+function
+
+*/There are 6 types of objects:
+
+Object
+Date
+Array
+String
+Number
+Boolean
+
+*/And 2 data types that cannot contain values:
+
+null
+undefined
+
+*/constructor
+
+"John".constructor                // Returns function String()  {[native code]}
+(3.14).constructor                // Returns function Number()  {[native code]}
+false.constructor                 // Returns function Boolean() {[native code]}
+[1,2,3,4].constructor             // Returns function Array()   {[native code]}
+{name:'John',age:34}.constructor  // Returns function Object()  {[native code]}
+new Date().constructor            // Returns function Date()    {[native code]}
+function () {}.constructor        // Returns function Function(){[native code]}
+
+26/JavaScript Type Conversion
+
+	*/Converting Strings to Numbers(Number(), parseFloat(), parseInt())
+
+Number("3.14")-->3.14
+Number(Math.PI)-->3.14
+Number(" ")-->NaN
+Number("")-->NaN
+Number("John")-->NaN
+
+	*/Converting Numbers to Strings (String(), ToString(), toExponential(), toFixed(),toPrecision())
+
+String(x)         // returns a string from a number variable x
+String(123)       // returns a string from a number literal 123
+String(100 + 23)  // returns a string from a number from an expression
+	...có thể chuyển đổi boolean date ra string hoặc number thì dùng những phép tính trên đều có kết quả
+
+27/try catch finally
+
+try {
+  Block of code to try
+}
+catch(err) {
+  Block of code to handle errors
+}
+finally {
+  Block of code to be executed regardless of the try / catch result
+}
+
+28/JavaScript Classes
+
+class ClassName {
+  constructor() { ... }
+  method_1() { ... }
+  method_2() { ... }
+  method_3() { ... }
+}
+
+Example
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age() {
+    const date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+
+const myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML =
+"My car is " + myCar.age() + " years old.";
+
+
+
+
+29/JavaScript Modules
+
+Example
+<script type="module">
+import message from "./message.js";//lấy từ file khác về dùng
+</script>
+	^
+	|
+	|
+message.js
+
+const message = () => {
+const name = "Jesse";
+const age = 40;
+return name + ' is ' + age + 'years old.';
+};
+
+export default message;//gưi giá trị ra khỏi file js sang dùng ở file khác
+
+30/Evenst - event Listenner
+
+	*/Events
+
+Input Events
+
+onblur -->khi rời khỏi trường nhập liệu
+onchange --> khi người dùng thay đổi trường nhập liệu
+onfocus --> khi trường nhập được kích chuột vào
+onselect --> khi văn bản được chọn được bôi đen
+onsubmit --> khi người dùng chọn gửi 
+onreset --> khi người dùng chọn nút reset
+onkeysdown --> khi người dùng nhấn giữ 1 phím
+onkeysup --> khi người dùng nhả 1 phím
+
+
+Mouse Events
+
+onmouseover/onmouseout : khi chuột đi qua 1 phần tử
+onmousedown/onmousep - khi nhấp thả nut chuột
+onmousemove/onmouseout-khi để trỏ lên hình ảnh
+onmouseover/onmouseout - khi di chuyển chuột qua/ra hình ảnh
+
+
+Click Events
+
+onclick-khi chuột phải vào
+ondbclick-khi nhấn 2 lần
+
+Load Events
+
+onload
+onunload
+onresize
+
+hầu hết tất cả các thư viện đều có nhưng cú pháp hơi khác 1 chút ví dụ trên React Js hơikhacs 1 chút về cách viết theo camlcase
+
+
+	*/Phương thức addEventListener()
+
+document.getElementById("myBtn").addEventListener("click", displayDate);--> tương đương với onclick
+
+element.addEventListener(event, function, useCapture);
+
+32/JS Browser BOM
+
+	*/JavaScript Window
+
+window.innerHeight - the inner height of the browser window (in pixels)
+window.innerWidth - the inner width of the browser window (in pixels)
+window.open() - open a new window
+window.close() - close the current window
+window.moveTo() - move the current window
+window.resizeTo() - resize the current window
+
+	*/JavaScript Window Screen
+
+screen.width
+screen.height
+screen.availWidth
+screen.availHeight
+screen.colorDepth
+screen.pixelDepth
+
+	*/JavaScript Window Location
+
+window.location.hreftrả về href (URL) của trang hiện tại
+window.location.hostnametrả về tên miền của máy chủ web
+window.location.pathnametrả về đường dẫn và tên tệp của trang hiện tại
+window.location.protocoltrả về giao thức web được sử dụng (http: hoặc https:)
+window.location.assign()tải một tài liệu mới
+
+	*/JavaScript Window History
+
+history.back()- giống như nhấp lại trong trình duyệt
+history.forward()- giống như nhấp vào chuyển tiếp trong trình duyệt
+
+	*/Sự kiện thời gian JavaScript
+
+setTimeout(function, milliseconds)
+Thực thi một hàm sau khi chờ một số mili giây được chỉ định.
+
+setInterval(function, milliseconds)
+Tương tự như setTimeout(), nhưng lặp lại việc thực thi hàm một cách liên tục.
+
+clearTimeout()dừng việc thực thi hàm được chỉ định trong setTimeout().
+
+clearInterval()dừng việc thực thi hàm được chỉ định trong phương thức setInterval().
